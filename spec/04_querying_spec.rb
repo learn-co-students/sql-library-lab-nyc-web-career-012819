@@ -19,7 +19,10 @@ describe 'querying' do
   end
 
   it "selects the authors names and their series' subgenres" do
-    expect(@db.execute(select_name_and_series_subgenres_of_authors)).to eq([["George R. R. Martin", "medieval"], ["Second Author", "space opera"]])
+    expect(
+      @db.execute(select_name_and_series_subgenres_of_authors)).to eq(
+        [["George R. R. Martin", "medieval"], ["Second Author", "space opera"]]
+      )
   end
 
   it 'selects the series title with the most characters that are the species "human"' do
@@ -27,6 +30,8 @@ describe 'querying' do
   end
 
   it 'selects all of the character names and their number of books they have appeared in, in descending order' do
-    expect(@db.execute(select_character_names_and_number_of_books_they_are_in)).to eq([["Character Three",3], ["Character Two", 3],["Daenerys Targaryen", 3], ["Tyrion Lannister", 3], ["Character Four", 1], ["Character One", 1], ["Eddard Stark", 1], ["Lady", 1]])
+    expect(
+      @db.execute(select_character_names_and_number_of_books_they_are_in)).to eq(
+        [["Character Three",3], ["Character Two", 3],["Daenerys Targaryen", 3], ["Tyrion Lannister", 3], ["Character Four", 1], ["Character One", 1], ["Eddard Stark", 1], ["Lady", 1]])
   end
 end
